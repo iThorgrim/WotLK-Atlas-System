@@ -42,15 +42,9 @@ That's it. **One line.** Clean, readable, maintainable.
 ## 🚀 Features
 
 ### 🎯 Simple API
-    
+
 ```lua
 SetAtlas(texture, "class-mage", true)
-```
-
-### 🔌 XML Support
-    
-```xml
-<Texture file="atlas:class-paladin" />
 ```
 
 ### 🌐 Universal
@@ -101,21 +95,34 @@ frame:Show()
 
 ### XML Example
 ```xml
-<Frame name="MyAwesomeFrame" parent="UIParent">
-    <Size x="200" y="200"/>
+<Frame name="MyFrame" parent="UIParent">
+    <Size x="400" y="300"/>
     <Anchors>
         <Anchor point="CENTER"/>
     </Anchors>
     <Layers>
         <Layer level="ARTWORK">
-            <!-- 🔥 New way -->
-            <Texture file="atlas:class-warrior">
+            <Texture name="$parentIcon">
                 <Size x="64" y="64"/>
+                <Anchors>
+                    <Anchor point="CENTER"/>
+                </Anchors>
             </Texture>
         </Layer>
     </Layers>
+    <Scripts>
+        <!-- 🔥 New way -->
+        <OnLoad>
+            SetAtlas(self.Icon, "class-warrior", true)
+        </OnLoad>
+    </Scripts>
 </Frame>
 ```
+
+### ⚠️ Important Note
+The `file="atlas:name"` attribute syntax does NOT work in XML files due to WoW's XML parser creating textures before Lua hooks are installed.
+
+Always use `SetAtlas()` in `OnLoad` scripts for XML-defined textures.
 
 ---
 
