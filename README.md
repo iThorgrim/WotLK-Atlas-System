@@ -22,7 +22,7 @@
 Ever written code like this? 
 
 ```lua
-texture: SetTexture("Interface\\Glues\\CharacterCreate\\UI-CharacterCreate-Classes")
+texture:SetTexture("Interface\\Glues\\CharacterCreate\\UI-CharacterCreate-Classes")
 texture:SetTexCoord(0, 0.25, 0, 0.25)  -- warrior...  I think?  🤷
 texture:SetSize(64, 64)
 ```
@@ -50,7 +50,7 @@ SetAtlas(texture, "class-mage", true)
 ### 🔌 XML Support
     
 ```xml
-<Texture file="atlas: class-paladin" />
+<Texture file="atlas:class-paladin" />
 ```
 
 ### 🌐 Universal
@@ -244,6 +244,7 @@ All original code is licensed under [AGPL-3.0](https://github.com/iThorgrim/WotL
 
 ### 🎮 Data (Blizzard)
 Atlas coordinate data is extracted from WoW and remains property of **Blizzard Entertainment**.
+
 **Source:** [Townlong Yak](https://www.townlong-yak.com/framexml/beta/Helix/AtlasInfo.lua)
 
 ---
