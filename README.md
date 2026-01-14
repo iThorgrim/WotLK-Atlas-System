@@ -102,7 +102,7 @@ frame:Show()
     </Anchors>
     <Layers>
         <Layer level="ARTWORK">
-            <Texture name="$parentIcon">
+            <Texture name="$parentIcon" parentKey="Icon">
                 <Size x="64" y="64"/>
                 <Anchors>
                     <Anchor point="CENTER"/>
